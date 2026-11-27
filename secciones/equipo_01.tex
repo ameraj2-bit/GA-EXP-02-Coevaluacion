@@ -1,72 +1,78 @@
 % =====================================================================
-%  PLANTILLA — copia este archivo como equipo_NN.tex por cada equipo
-%  observado (todos menos el tuyo) y agrégalo en informe.tex con \input.
-%
-%  Reglas de la guía para llenar:
-%  - La evidencia debe ser OBSERVABLE: n.º de diapositiva, minuto,
-%    concepto explicado u omitido, error técnico, salida de la demo,
-%    pregunta y respuesta. No vale "estuvo bien".
-%  - Nivel 4 solo si se cumple TODO. Si dudas entre dos niveles, el inferior.
-%  - Toda evidencia sale de TU hoja de campo de ese equipo (foto en hojas_campo/).
-%  - 3 o más dimensiones sin evidencia = CERO.
+%  EQUIPO 1 (GGHL) — T7 Computación paralela — 26/11/2026
+%  Integrantes observados: Diego, Roger, Lombeida.
+%  Las diapositivas citadas (1/5 a 5/5) son las de la parte de Diego.
+%  PENDIENTE: poner los niveles (?) y los mismos números en \notasugerida.
 % =====================================================================
 
-\section{\completar{Equipo N --- Tema}}
+\section{Grupo 1 (GGHL) --- T7 Computación paralela}
 
 \identificacion
-  {\completar{nombre o número del equipo}}
-  {\completar{T? --- nombre del tema}}
-  {\completar{dd/mm/2026}}
-  {\completar{hh:mm}}
-  {\completar{hh:mm}}
+{Grupo 1 (GGHL): Diego, Roger y Lombeida}
+{T7 --- Computación paralela (Apache Spark)}
+{26/11/2026}
+{08:40}
+{09:10}
 
 \begin{dimensiones}
-  % D1 Cumplimiento de la guía (10): conceptos clave, demo en vivo,
-  %    comparación y recomendación.
-  \dimension{D1 Cumplimiento de la guía (10)}
-    {\faltanivel}
-    {\completar{qué partes de la guía cubrieron y cuáles faltaron}}
-
-  % D2 Fundamentación conceptual (20): nivel 4 = al menos 5 conceptos clave
-  %    sin errores y acorde a la fuente oficial (RFC, OASIS, W3C, Jakarta EE...).
-  %    Errores graves que bajan D2: WebSocket sobre UDP, JMS como protocolo,
-  %    gRPC con JSON, TCP que conserva límites de mensaje,
-  %    concurrencia = paralelismo, GET para modificar datos.
-  \dimension{D2 Fundamentación conceptual (20)}
-    {\faltanivel}
-    {\completar{conceptos explicados (diapositiva/minuto) y errores detectados}}
-
-  % D3 Desarrollo técnico (15): nivel 4 = demo en vivo en procesos distintos
-  %    con un caso de fallo + comparación de >= 2 alternativas con >= 3
-  %    criterios medibles.
-  \dimension{D3 Desarrollo técnico (15)}
-    {\faltanivel}
-    {\completar{qué mostró la demo, si hubo caso de fallo, qué comparó}}
-
-  % D4 Análisis y recomendación (20): nivel 4 = cuándo usar y cuándo no,
-  %    >= 2 razones ligadas a un caso concreto, reconoce limitaciones.
-  \dimension{D4 Análisis y recomendación (20)}
-    {\faltanivel}
-    {\completar{recomendación dada, razones, caso, limitaciones}}
-
-  % D5 Comunicación (25): no lee, tiempo T +- 2 min, responde con precisión
-  %    una pregunta técnica, diapositivas legibles, exponen todos.
-  \dimension{D5 Comunicación (25)}
-    {\faltanivel}
-    {\completar{duración real, pregunta hecha y respuesta, quiénes expusieron}}
-
-  % D6 Fuentes (10): fuente visible en cada dato/figura, fuentes primarias
-  %    o indexadas, formato IEEE.
-  \dimension{D6 Fuentes (10)}
-    {\faltanivel}
-    {\completar{diapositivas con/sin fuente, tipo de fuentes, formato}}
+	\dimension{D1 Cumplimiento de la guía (10)}
+	{3}
+	{Conceptos clave: presentados por Diego (diap.~1--2). Demostración en vivo:
+		Diego ejecutó la práctica RTV con Spark \texttt{local[*]} (diap.~3);
+		Lombeida presentó una práctica pequeña; Roger no presentó práctica.
+		Comparación: solo entre 2 y 4 particiones de la misma práctica (diap.~3).
+		Recomendación: no se observó una recomendación explícita.}
+	
+	\dimension{D2 Fundamentación conceptual (20)}
+	{3}
+	{Diego explicó: definición de computación paralela y su objetivo
+		(diap.~1); diferencia entre ejecución secuencial, paralela y distribuida con
+		el ejemplo de vehículos (diap.~1); arquitectura de Spark con driver, gestor
+		del clúster, nodos y ejecutores (diap.~2); tareas en hilos y núcleos
+		(diap.~2); particiones y las operaciones \texttt{parallelize()},
+		\texttt{map()} y \texttt{collect()} (diap.~3). No se detectaron errores
+		graves de la guía. La explicación de Roger quedó incompleta.}
+	
+	\dimension{D3 Desarrollo técnico (15)}
+	{2}
+	{Diego explicó el código y lo ejecutó: Spark en modo \texttt{local[*]}
+		en una sola computadora (diap.~3), es decir, no en procesos o equipos
+		distintos, y sin caso de fallo. Resultado: 2 particiones, 2/2 tareas,
+		1,8195\,s; 4 particiones, 4/4 tareas, 3,4206\,s (dos mediciones por
+		configuración). Se comparó una sola variable (número de particiones) con
+		un criterio medible (tiempo), no dos alternativas tecnológicas. Roger no
+		hizo demostración de código; la práctica de Lombeida fue pequeña y su
+		explicación del código, escasa.}
+	
+	\dimension{D4 Análisis y recomendación (20)}
+	{3}
+	{Se reconoció una limitación: en la prueba, aumentar las particiones
+		elevó el tiempo, y en un clúster también influyen el reparto y la
+		ubicación de los datos (diap.~3). No se indicó cuándo usar y cuándo no
+		usar la computación paralela ni se ligaron razones a un caso concreto.}
+	
+	\dimension{D5 Comunicación (25)}
+	{3}
+	{Duración: 30\,min (08:40--09:10), sin tiempo asignado para comparar con
+		$T \pm 2$\,min. Expusieron los tres integrantes. Diego explicó su parte con
+		claridad. A Lombeida no se le entendió bien por su entonación. No hubo
+		preguntas, así que no se observó respuesta a una pregunta técnica.}
+	
+	\dimension{D6 Fuentes (10)}
+	{2}
+	{En las diapositivas de Diego, cada dato tiene su cita visible (diap.~1--3),
+		incluida la tabla de tiempos (``registro de la práctica''). Las referencias
+		están en formato IEEE con DOI (diap.~4--5): fuentes indexadas (Springer,
+		\emph{IEEE Transactions}, \emph{The Computer Journal}) y documentación
+     oficial de Apache Spark. El dato del 80\,\% de Fortune 500 (diap.~1)
+     proviene de la página del propio proyecto. No se verificó en las diapositivas de Roger y Lombeida.}
 \end{dimensiones}
 
 % Pon aquí los mismos niveles de la tabla, en orden D1..D6 (solo números):
-\notasugerida{0}{0}{0}{0}{0}{0}
+\notasugerida{3}{4}{3}{3}{3}{2}
 
 \retroalimentacion
-  {\completar{una fortaleza concreta, con la evidencia que la respalda}}
-  {\completar{una mejora accionable: qué hacer distinto y cómo}}
+  {Por parte de Diego buen dominio del tema y de explicación}
+  {Por parte de los compañeros Roger y Lombeida se recomienda profundizar en la explicación practica.}
 
 \clearpage
