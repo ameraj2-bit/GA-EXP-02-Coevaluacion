@@ -1,0 +1,63 @@
+% =====================================================================
+%  macros.tex — comandos del informe GA-EXP-02 (no hace falta editarlo)
+% =====================================================================
+
+% Texto pendiente: aparece en ROJO en el PDF para que no se olvide nada.
+\newcommand{\completar}[1]{\textcolor{red}{\textbf{[COMPLETAR: #1]}}}
+\newcommand{\faltanivel}{\textcolor{red}{\textbf{?}}}
+
+% ---------- Identificación del equipo evaluado ----------
+% \identificacion{Equipo}{Tema}{Fecha}{Hora inicio}{Hora fin}
+\newcommand{\identificacion}[5]{%
+  \subsection*{Identificación}
+  \begin{tabular}{@{}p{0.28\textwidth}p{0.66\textwidth}@{}}
+    \toprule
+    Equipo evaluado & #1 \\
+    Tema            & #2 \\
+    Fecha           & #3 \\
+    Hora de inicio  & #4 \\
+    Hora de fin     & #5 \\
+    \bottomrule
+  \end{tabular}
+}
+
+% ---------- Tabla de dimensiones ----------
+\newenvironment{dimensiones}{%
+  \subsection*{Evaluación por dimensión}
+  \renewcommand{\arraystretch}{1.25}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\centering\arraybackslash}p{0.07\textwidth}>{\raggedright\arraybackslash}p{0.63\textwidth}@{}}
+    \toprule
+    \textbf{Dimensión (peso)} & \textbf{Nivel} & \textbf{Evidencia observable} \\
+    \midrule
+    \endhead
+}{%
+    \bottomrule
+  \end{longtable}
+}
+% \dimension{Nombre (peso)}{Nivel 0-4}{Evidencia}
+\newcommand{\dimension}[3]{#1 & #2 & #3 \\ \midrule}
+
+% ---------- Nota sugerida con la cuenta escrita ----------
+% \notasugerida{D1}{D2}{D3}{D4}{D5}{D6}   (niveles 0-4)
+% Fórmula de la guía: (10*D1 + 20*D2 + 15*D3 + 20*D4 + 25*D5 + 10*D6) / 4 * 0.1
+\newcommand{\notasugerida}[6]{%
+  \subsection*{Nota sugerida}
+  \edef\NSsuma{\fpeval{10*(#1)+20*(#2)+15*(#3)+20*(#4)+25*(#5)+10*(#6)}}%
+  \edef\NSdiv{\fpeval{\NSsuma/4}}%
+  \edef\NSnota{\fpeval{\NSdiv*0.1}}%
+  Fórmula: $\dfrac{10D_1+20D_2+15D_3+20D_4+25D_5+10D_6}{4}\times 0.1$
+  \[
+    \frac{10(#1)+20(#2)+15(#3)+20(#4)+25(#5)+10(#6)}{4}\times 0.1
+    = \frac{\NSsuma}{4}\times 0.1 = \NSdiv\times 0.1 = \NSnota
+    \approx \mathbf{\fpeval{round(\NSnota,1)}}
+  \]
+}
+
+% ---------- Retroalimentación ----------
+% \retroalimentacion{Fortaleza}{Mejora}
+\newcommand{\retroalimentacion}[2]{%
+  \subsection*{Fortaleza}
+  #1
+  \subsection*{Mejora accionable}
+  #2
+}

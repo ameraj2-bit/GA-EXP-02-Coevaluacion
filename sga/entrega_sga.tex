@@ -1,0 +1,38 @@
+% PDF de UNA página para el SGA: carátula + URL del repositorio en una sola línea.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=blue}
+\pagestyle{empty}
+
+% Cambia SOLO esta línea si el repositorio tiene otro nombre:
+\newcommand{\repourl}{https://github.com/ameraj2-bit/GA-EXP-02-Coevaluacion}
+
+\begin{document}
+\centering
+{\Large\bfseries Universidad Técnica Estatal de Quevedo\par}
+\vspace{0.3cm}
+{\large Facultad de Ciencias de la Computación\par}
+{\large Carrera de Ingeniería de Software\par}
+\vspace{2cm}
+{\large ISR-701 Aplicaciones Distribuidas\par}
+\vspace{0.5cm}
+{\Huge\bfseries GA-EXP-02\par}
+\vspace{0.3cm}
+{\LARGE Coevaluación de exposiciones\par}
+\vspace{2cm}
+{\large\textbf{Estudiante:} Mera Jumbo Allison Michelle\par}
+\vspace{0.3cm}
+{\large\textbf{Docente:} Gleiston Cicerón Guerrero Ulloa, PhD\par}
+\vspace{0.3cm}
+{\large\textbf{Fecha de la sesión:} 26 de noviembre de 2026\par}
+\vspace{2.5cm}
+{\large\textbf{Repositorio:}\par}
+\vspace{0.3cm}
+\mbox{\large\url{\repourl}}\par
+\vfill
+{\large Séptimo semestre --- SPA 2026--2027\par}
+\end{document}

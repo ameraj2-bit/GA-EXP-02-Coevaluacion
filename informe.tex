@@ -1,0 +1,66 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------------------
+%  Paquetes (todos vienen en TeX Live / MiKTeX / Overleaf)
+% ---------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{xfp}            % cálculo de la nota sugerida
+\usepackage{array,booktabs,longtable}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\renewcommand{\contentsname}{Contenido}
+
+\input{macros}
+
+% ---------------------------------------------------------------------
+%  Datos de la carátula
+% ---------------------------------------------------------------------
+\newcommand{\estudiante}{Mera Jumbo Allison Michelle}
+\newcommand{\fechasesion}{26 de noviembre de 2026}
+
+\begin{document}
+
+% ============================ CARÁTULA ===============================
+\pagenumbering{gobble}
+\begin{titlepage}
+  \centering
+  {\Large\bfseries Universidad Técnica Estatal de Quevedo\par}
+  \vspace{0.3cm}
+  {\large Facultad de Ciencias de la Computación\par}
+  {\large Carrera de Ingeniería de Software\par}
+  \vspace{2cm}
+  {\large ISR-701 Aplicaciones Distribuidas\par}
+  \vspace{0.5cm}
+  {\Huge\bfseries GA-EXP-02\par}
+  \vspace{0.3cm}
+  {\LARGE Coevaluación de exposiciones\par}
+  \vspace{2cm}
+  {\large\textbf{Estudiante:} \estudiante\par}
+  \vspace{0.3cm}
+  {\large\textbf{Docente:} Gleiston Cicerón Guerrero Ulloa, PhD\par}
+  \vspace{0.3cm}
+  {\large\textbf{Fecha de la sesión:} \fechasesion\par}
+  \vfill
+  {\large Séptimo semestre --- SPA 2026--2027\par}
+\end{titlepage}
+
+\pagenumbering{arabic}
+\tableofcontents
+\clearpage
+
+% ======================= EQUIPOS OBSERVADOS ==========================
+% Un archivo por equipo (todos menos el propio). Para agregar otro:
+% copia secciones/_plantilla_equipo.tex como equipo_NN.tex y añade su \input.
+\input{secciones/equipo_01}
+\input{secciones/equipo_02}
+\input{secciones/equipo_03}
+
+\end{document}
