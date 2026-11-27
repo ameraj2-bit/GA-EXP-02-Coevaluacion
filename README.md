@@ -15,7 +15,7 @@ Informe individual de coevaluación de los equipos expositores (una sección por
 | `secciones/equipo_NN.tex` | Una sección por equipo evaluado |
 | `secciones/_plantilla_equipo.tex` | Plantilla vacía para agregar equipos |
 | `informe.pdf` | PDF compilado del informe |
-| `hojas_campo/` | Foto de la hoja de campo manuscrita de cada equipo |
+| `hojas_campo/` | Notas de campo de cada equipo, tomadas en bloc de notas durante la sesión por indicación del docente |
 | `sga/entrega_sga.tex` / `.pdf` | PDF de una página que se sube al SGA |
 
 ## Cómo compilar
